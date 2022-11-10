@@ -1,0 +1,38 @@
+package codingmentor_newcourse;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class homework {
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+		int length = scan.nextInt();
+		int[] arr = new int[length];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = scan.nextInt();
+		}
+		System.out.println(minimunGap(arr));
+	}
+
+	public static int minimunGap(int[] nums) {
+		List<Integer> arr = new ArrayList<Integer>();
+		int n = 0;
+		for (int i = 0; i < nums.length - 1; i++) {
+			for (int j = nums.length - 1; j > i; j--) {
+				if (nums[i] == nums[j]) {
+					n = j - i;
+					arr.add(n);
+				}
+			}
+		}
+		int min = arr.get(0);
+		for (Integer integer : arr) {
+			if (min > integer) {
+				min = integer;
+			}
+		}
+		return min;
+	}
+}
