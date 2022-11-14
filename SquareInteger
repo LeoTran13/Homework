@@ -1,0 +1,22 @@
+package codingmentor_newcourse;
+
+public class SquareInteger {
+	public static void main(String[] args) {
+		System.out.println(squares(5, 8));
+
+	}
+
+	public static int squares(int a, int b) {
+		int squareA = (int) Math.sqrt(a);
+		int squareB = (int) Math.sqrt(b);
+		int squareIntegers;
+
+		if (squareA == Math.sqrt(a)) {
+			squareIntegers = squareB - squareA + 1;
+		} else {
+			squareIntegers = squareB - squareA;
+		}
+		return squareIntegers;
+	}
+
+}
